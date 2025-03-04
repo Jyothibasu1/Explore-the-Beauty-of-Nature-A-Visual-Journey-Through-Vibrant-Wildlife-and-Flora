@@ -1,0 +1,61 @@
+/* Styling for the entire gallery container */
+.cardscomp {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible grid */
+    gap: 20px; /* Space between the cards */
+    padding: 20px; /* Space inside the gallery */
+    box-sizing: border-box;
+  }
+  
+  /* styling for each card */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /*  the content stays within the box */
+  }
+  
+  /* Image styling */
+  .card img {
+    width: 100%; /* the image take the full width */
+    height: 200px; /* Fixes the height */
+    object-fit: cover; /*  the image does not get distorted */
+    border-radius: 8px; /* rounded corners for the image */
+   
+  }
+  
+  /* Title styling */
+  .card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Paragraph (description) styling */
+  .card p {
+    font-size: 14px;
+    color: #333; 
+    background-color: #f0f0f0; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    max-height: 100px; /* Limit the height */
+    overflow-y: auto; /* Adds a scrollbar if text exceeds the height */
+  }
+  
+  /* Responsive handling for smaller screens */
+  @media (max-width: 768px) {
+    .cardscomp {
+      grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cardscomp {
+      grid-template-columns: 1fr; /* One column on small screens */
+    }
+  }
+  
